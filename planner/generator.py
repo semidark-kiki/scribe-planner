@@ -217,12 +217,12 @@ def draw_month_page(c: canvas.Canvas, metadata: dict) -> None:
             row += 1
         day += 1
 
-    # Checklist navigation button (top-right corner)
+    # Todo navigation button (top-right corner)
     c.setFont(NAV_FONT, NAV_FONT_SIZE)
     checklist_btn_x = PAGE_WIDTH - MARGIN_RIGHT - NAV_BUTTON_WIDTH
     checklist_btn_y = PAGE_HEIGHT - MARGIN_TOP - 35
     c.rect(checklist_btn_x, checklist_btn_y, NAV_BUTTON_WIDTH, NAV_BUTTON_HEIGHT)
-    cl_text = "Checklist"
+    cl_text = "Todo"
     cl_text_width = c.stringWidth(cl_text, NAV_FONT, NAV_FONT_SIZE)
     c.drawString(
         checklist_btn_x + (NAV_BUTTON_WIDTH - cl_text_width) / 2,
@@ -294,10 +294,10 @@ def _draw_nav_strip(
             )
 
         elif col == 8:
-            # --- Checklist button cell ---
+            # --- Todo button cell ---
             c.rect(cell_x, cell_y, cell_width, WEEK_STRIP_CELL_HEIGHT)
             c.setFont(TITLE_FONT, NAV_FONT_SIZE)
-            label = "Checklist"
+            label = "Todo"
             lw = c.stringWidth(label, TITLE_FONT, NAV_FONT_SIZE)
             c.drawString(
                 cell_x + (cell_width - lw) / 2,
