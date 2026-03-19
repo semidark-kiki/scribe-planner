@@ -75,11 +75,11 @@ LIGHT_GRAY = (0.9, 0.9, 0.9)
 # Week overview strip on daily pages
 # Cell width is computed dynamically to fill the content area:
 #   (PAGE_WIDTH - MARGIN_LEFT - MARGIN_RIGHT) / 7
-WEEK_STRIP_CELL_HEIGHT = 80
+WEEK_STRIP_CELL_HEIGHT = 100  # Increased from 80 for better spacing
 WEEK_STRIP_HEADER_HEIGHT = 25
 WEEK_STRIP_HIGHLIGHT_GRAY = 0.82
 WEEK_STRIP_DAY_FONT_SIZE = 33  # 22 * 1.5 ≈ 33
 WEEK_STRIP_WEEKDAY_FONT_SIZE = 24  # 12 * 2 = 24
 # Padding within strip cells
-WEEK_STRIP_WEEKDAY_TOP_PADDING = 38  # Space from top for weekday name (increased for better spacing)
-WEEK_STRIP_DAY_BOTTOM_PADDING = 30  # Space from bottom for day number (increased for better spacing)
+WEEK_STRIP_WEEKDAY_TOP_PADDING = 45  # Space from top for weekday name
+WEEK_STRIP_DAY_BOTTOM_PADDING = 38  # Space from bottom for day number
