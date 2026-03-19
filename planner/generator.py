@@ -159,6 +159,9 @@ def draw_month_page(c: canvas.Canvas, metadata: dict) -> None:
 
     grid_start_y = PAGE_HEIGHT - MARGIN_TOP - TITLE_HEIGHT - 35
 
+    # Padding for weekday names (space from top of header area)
+    WEEKDAY_TOP_PADDING = 15
+
     for i, day_name in enumerate(weekdays):
         x = (
             MARGIN_LEFT
@@ -169,7 +172,7 @@ def draw_month_page(c: canvas.Canvas, metadata: dict) -> None:
             )
             / 2
         )
-        c.drawString(x, grid_start_y, day_name)
+        c.drawString(x, grid_start_y + WEEKDAY_TOP_PADDING, day_name)
 
     # Calculate grid position
     grid_start_y -= GRID_HEADER_HEIGHT + 20
@@ -201,9 +204,13 @@ def draw_month_page(c: canvas.Canvas, metadata: dict) -> None:
         # Draw day number
         day_str = str(day)
         text_width = c.stringWidth(day_str, GRID_FONT, GRID_FONT_SIZE)
+        
+        # Padding for day number (space from bottom of cell)
+        DAY_NUMBER_BOTTOM_PADDING = 35
+        
         c.drawString(
             x + (CELL_WIDTH - text_width) / 2,
-            y + cell_height - 30,
+            y + cell_height - DAY_NUMBER_BOTTOM_PADDING,
             day_str,
         )
 
