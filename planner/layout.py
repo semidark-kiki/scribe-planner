@@ -80,3 +80,6 @@ WEEK_STRIP_HEADER_HEIGHT = 25
 WEEK_STRIP_HIGHLIGHT_GRAY = 0.82
 WEEK_STRIP_DAY_FONT_SIZE = 33  # 22 * 1.5 ≈ 33
 WEEK_STRIP_WEEKDAY_FONT_SIZE = 24  # 12 * 2 = 24
+# Padding within strip cells
+WEEK_STRIP_WEEKDAY_TOP_PADDING = 28  # Space from top for weekday name
+WEEK_STRIP_DAY_BOTTOM_PADDING = 22  # Space from bottom for day number

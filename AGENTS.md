@@ -182,6 +182,37 @@ Target Python 3.11+ style and typing.
 - Daily navigation links must never target missing destinations.
 - Output should remain usable on Kindle Scribe portrait dimensions.
 
+## PDF Visualization and Analysis
+
+For visual verification of PDF changes (font sizes, layout, colors, etc.):
+
+```bash
+# Convert PDF pages to PNG images (150 DPI for good detail)
+pdftoppm -png -r 150 output/your-planner.pdf output/page
+
+# List generated pages
+ls -lh output/page-*.png
+
+# View specific pages (e.g., first 5 pages)
+# Then analyze the images for visual correctness
+```
+
+**Use cases:**
+- Verify font size changes before/after modifications
+- Check layout alignment and spacing
+- Validate color schemes and button styles
+- Inspect hyperlink areas and visual hierarchy
+- Debug rendering issues on Kindle Scribe
+
+**Example workflow for font changes:**
+1. Generate test PDF: `python main.py --year 2026 --month 3 --output output/test.pdf`
+2. Convert to images: `pdftoppm -png -r 150 output/test.pdf output/page`
+3. Inspect key pages:
+   - `page-001.png` → First checklist/Todo page
+   - `page-003.png` → Month overview (check day names/numbers)
+   - `page-004.png` → Daily page (check week strip fonts)
+4. Compare with previous version if needed
+
 ## Agent Workflow Expectations
 
 - Read `docs/plan/POC-PRD.md` before significant changes.

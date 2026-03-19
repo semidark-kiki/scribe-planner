@@ -32,6 +32,8 @@ from .layout import (
     WEEK_STRIP_HIGHLIGHT_GRAY,
     WEEK_STRIP_DAY_FONT_SIZE,
     WEEK_STRIP_WEEKDAY_FONT_SIZE,
+    WEEK_STRIP_WEEKDAY_TOP_PADDING,
+    WEEK_STRIP_DAY_BOTTOM_PADDING,
     DAILY_SECTION_GAP,
     DAILY_SECTION_PADDING,
     DAILY_CHECKBOX_SIZE,
@@ -336,7 +338,7 @@ def _draw_nav_strip(
             )
             c.drawString(
                 cell_x + (cell_width - wd_width) / 2,
-                cell_y + WEEK_STRIP_CELL_HEIGHT - 20,
+                cell_y + WEEK_STRIP_WEEKDAY_TOP_PADDING,
                 wd_text,
             )
 
@@ -349,7 +351,7 @@ def _draw_nav_strip(
             text_width = c.stringWidth(day_str, TITLE_FONT, WEEK_STRIP_DAY_FONT_SIZE)
             c.drawString(
                 cell_x + (cell_width - text_width) / 2,
-                cell_y + 15,
+                cell_y + WEEK_STRIP_CELL_HEIGHT - WEEK_STRIP_DAY_BOTTOM_PADDING,
                 day_str,
             )
 
